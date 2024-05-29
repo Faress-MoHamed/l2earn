@@ -1,12 +1,12 @@
 import React from "react";
-import { Navigate } from "react-router-dom";
 import { getFromStorage } from "../utils/storage";
+import Login from "./Login";
 
 const RequireAuth = ({ children }) => {
-	const isAuthenticated = getFromStorage("auth");
-
+	const isAuthenticated = getFromStorage("user");
+	console.log(isAuthenticated);
 	if (!isAuthenticated) {
-		return <Navigate to="/login" />;
+		return <Login/>;
 	}
 
 	return children;

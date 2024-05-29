@@ -14,7 +14,6 @@ function InputField({
 	register,
 }) {
 	const [visible, setVisible] = useState(false);
-	console.log(register);
 	const validatePassword = (password) => {
 		const errors = {
 			minLength: password.length < 8,

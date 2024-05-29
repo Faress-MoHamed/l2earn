@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { useFormik } from "formik";
 import InputField from "../Component/InputField";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { getFromStorage, saveToStorage } from "../utils/storage";
+import Dashboard from "../Component/Dashboard";
+import RequireAuth from "./RequireAuth";
 
 function Register() {
 	const [validationErrors, setValidationErrors] = useState({
@@ -11,6 +14,7 @@ function Register() {
 		specialChar: true,
 		number: true,
 	});
+	const navigate = useNavigate();
 	const formik = useFormik({
 		initialValues: {
 			email: "",
@@ -18,7 +22,8 @@ function Register() {
 			password: "",
 		},
 		onSubmit: (values) => {
-			console.log(values);
+			saveToStorage("user", values);
+			navigate("/");
 		},
 	});
 
@@ -34,7 +39,7 @@ function Register() {
 					</p>
 					<p className="text-base text-[#333333] font-[400]">
 						Already have an account?
-						<Link to="/login" className="underline">
+						<Link to="/" className="underline">
 							Log in
 						</Link>
 					</p>
@@ -100,7 +105,7 @@ function Register() {
 					</button>
 					<p className="text-base text-[#333333] font-[400]">
 						Already have an account?
-						<Link to="/login" className="underline">
+						<Link to="/" className="underline">
 							Log in
 						</Link>
 					</p>
