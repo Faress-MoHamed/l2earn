@@ -3,6 +3,7 @@ import Register from "./Auth/Register";
 import Layout from "./Component/Layout";
 import Dashboard from "./Component/Dashboard";
 import RequireAuth from "./Auth/RequireAuth";
+import { Toaster } from "react-hot-toast";
 
 function App() {
 	const route = createBrowserRouter([
@@ -29,7 +30,10 @@ function App() {
 			],
 		},
 	]);
-	return <RouterProvider router={route} />;
+	return<>
+		<RouterProvider router={route} />
+		<Toaster position="top-right" />
+	</>
 }
 
 export default App;
