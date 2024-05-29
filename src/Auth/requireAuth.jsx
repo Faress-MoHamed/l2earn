@@ -4,9 +4,8 @@ import Login from "./Login";
 
 const RequireAuth = ({ children }) => {
 	const isAuthenticated = getFromStorage("user");
-	console.log(isAuthenticated);
 	if (!isAuthenticated) {
-		return <Login/>;
+		return <Login />;
 	}
 
 	return children;
