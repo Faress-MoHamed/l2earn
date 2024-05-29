@@ -17,7 +17,7 @@ export default function Layout() {
 					}
 				</div>
 				<div className="w-2/5 lg:block hidden">
-					<div className="w-full h-screen bg-[url('./assets/backGround.jpeg')] bg-cover  bg-no-repeat bg-center"></div>
+					<div className="w-full h-screen bg-[url('/backGround.jpeg')] bg-cover  bg-no-repeat bg-center"></div>
 				</div>
 			</div>
 		</>
