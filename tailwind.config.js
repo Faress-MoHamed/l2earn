@@ -9,11 +9,9 @@ export default {
 				Poppins: ["Poppins", "sans-serif"],
 			},
 			backgroundImage: {
-				bg: "url('./backGround.jpeg')",
+				bg: "url('./public/backGround.jpeg')",
 			},
 		},
 	},
-	plugins: [
-		
-	],
+	plugins: [],
 };
